@@ -1,0 +1,97 @@
+/* sidebar responsive collapse */
+@media (max-width: 1279px) {
+    :root {
+        --sidebar-width: 64px;
+    }
+
+    .sidebar .nav-text,
+    .sidebar .logo-text,
+    .sidebar .user-info {
+        display: none;
+    }
+
+    .sidebar .nav-item {
+        justify-content: center;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 767px) {
+    :root {
+        --sidebar-width: 0px;
+    }
+
+    #mobile-menu-toggle {
+        display: block !important;
+    }
+
+    .responsive-grid-2 {
+        grid-template-columns: 1fr !important;
+    }
+
+    .form-group,
+    #filter-form .form-group {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+        width: 260px !important;
+        position: fixed;
+        z-index: 999;
+    }
+
+    .sidebar.mobile-open {
+        transform: translateX(0);
+    }
+
+    .sidebar.mobile-open .nav-text,
+    .sidebar.mobile-open .logo-text,
+    .sidebar.mobile-open .user-info {
+        display: block;
+    }
+
+    .sidebar.mobile-open .nav-item {
+        justify-content: flex-start;
+        padding: 12px 20px;
+    }
+
+    /* Tables become cards on mobile */
+    .table-responsive .table {
+        display: block;
+    }
+
+    .table-responsive .table thead {
+        display: none;
+        /* hide headers */
+    }
+
+    .table-responsive .table tr {
+        display: block;
+        margin-bottom: 16px;
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 12px;
+    }
+
+    .table-responsive .table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+        padding: 8px 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .table-responsive .table td:last-child {
+        border-bottom: none;
+    }
+
+    .table-responsive .table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--text-secondary);
+    }
+}

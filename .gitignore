@@ -1,0 +1,12 @@
+vendor/
+node_modules/
+.env
+config/database.php
+public/img/uploads/*
+!public/img/uploads/.gitkeep
+*.log
+.DS_Store
+order.pem
+cookie.txt
+composer.phar
+composer.phar.1
